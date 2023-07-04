@@ -1,0 +1,71 @@
+<%- include('./header/header.ejs') %> 
+
+<div>
+  
+    <h2 class="font text-center text-dark" style="font-weight: bold;"> <img src="img/ss.png" width="50px" height="50px" /> اهنگ  </h2>
+
+  </div>
+  <% if(music){ %> 
+<% for(let i of music) {  %> 
+<div class="card w-100 shadow border-3 font" style="width: 18rem;">
+    <h5 class="card-title mt-3 ml-3" style="text-shadow: 1px 7px 12px #3CB8CE;"><%- i.title %> </h5>
+    <img  src="/img/<%- i.img %> " class="card-img-top" alt="این تصویر موجود نیست"/>
+    <p class="card-text text-center m-3">  <%- i.text %>   </p>
+      <h5 class="text-center"> ------------- پخش آنلاین --------------</h5>
+      <audio class="embed-responsive-item m-auto w-100 pl-4 pr-4" controls="" preload="none"> <source src="/music/<%- i.music %> " type="audio/mp3"></audio>
+    <div class="row m-3">
+        <div class="col">
+            <h6 class="text-center mt-3 mb-3"> ------------- دانلود آهنگ با کیفیت های 320 و 128 --------------</h5>
+            <a href="/music/<%- i.music %>" download="/music/<%- i.music %>" class="btn bg-warning w-100 mb-1 p-2" style="  font-size: 15px; color: cornsilk;">   دانلود با کیفیت 320 </a>
+            <a href="/music/<%- i.music %>" download="/music/<%- i.music %>" class="btn bg-info w-100 p-2"  style="font-size: 15px; color: cornsilk;"> دانلود با کیفیت 128</a>
+        </div>
+    </div>
+    <div class="card-footer ">
+        <b class="font text-primary" style="font-size: 15px;">تاریخ انتشار اهنگ :</b>
+        <b class="font text-danger" style="font-size: 15px;"><%- i.history %>  </b>
+    </div>
+  </div>
+<% } %> 
+<% } %> 
+<!-- فرم ارسال نظرات -->
+  <div class="form font mt-3">
+    <form action="/ids" method="post">
+        <label class="form-label pt-2 pl-2 text-dark text-dark" for="form3Example1">پیام :</label>
+        <textarea class="form-control border border-dark" id="textAreaExample" name="text" for="text" rows="4" required></textarea>
+        <div class="row">
+            <div class="col-6">
+                <label class="form-label text-dark pt-1" for="form3Example1"> نام  :</label>
+                <input type="text" name="name" for="name" id="form3Example1" class="form-control border border-dark" required />
+                <input type="text" name="id" for="id" id="form3Example1" value="<%- id %> " class="form-control" style="display: none;" />
+            </div>
+            <div class="col-6">
+            <label class="form-label pt-1 text-dark" for="form3Example1">ایمیل :</label>
+            <input type="email" id="form3Example1" name="email" for="email" class="form-control border border-dark" required  autocomplete=""/>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-2 w-100"  style="  font-size: 13px;"> ارسال</button>
+    </form>
+  </div>
+<!-- نمایش نظرات کاربران -->
+<% if(comment){ %>
+<% for(let i of comment) {%>  
+  <div class="row mt-3 mb-3">
+      <div class="col">
+            <div class="card w-100 shadow-sm border  border-dark border-top-0" style="width: 18rem;">
+                <h6 class="ml-0 mt-0 mb-0 font  card-header font-weight-bold" style="background-color: #ff6f00; color: #fff8e1;"> <%- i.name %>  : </h6>
+                <p class="ml-0 mt-0 mb-0 font text-dark card-body" style="background-color: #eeeeee;"><%- i.text %> </p>
+            </div>
+      </div>
+  </div>
+  <% } %>
+<% } else { %> 
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Holy guacamole!</strong> موجود نیست
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <% } %> 
+
+
+<%- include ('./footer/footer.ejs') %> 

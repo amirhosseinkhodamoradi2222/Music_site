@@ -1,0 +1,24 @@
+<%- include('./header/header.ejs') %> 
+<div>
+    <h2 class="font text-center text-success" style="font-weight: bold;"> <img src="img/ss.png" width="50px" height="50px" /> کنسرت ها </h2>
+</div>
+<% for(let i of concert){ %> 
+<div class="card w-100 mt-3 mb-2 font" style="width: 18rem;">
+    <img src="../img/<%- i.img %> " class="card-img-top" style="height: 500px;" alt="متاسفانه این تصویر موجود نیست"  />
+    <div class="card-body">
+      <h5 class="card-title"><%- i.title %></h5>
+      <p class="card-text"> <%- i.text %> </p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">زمان برگزاری : <%- i.date %></li>
+      <li class="list-group-item">تاریخ برگزاری : <%- i.history %></li>
+    </ul>
+    <div class="card-body">
+      <a href="<%- i.link %> " class="card-link" target="_blank">تهیه بلیط </a>
+    </div>
+  </div>
+<% } %> 
+
+
+
+<%- include ('./footer/footer.ejs') %> 

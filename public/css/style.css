@@ -1,0 +1,78 @@
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+@font-face {
+    font-family: IRANSans-Bold;
+    src: url(../fonts/IRANSans-Bold-web.ttf)
+}
+
+@font-face {
+    font-family: IRANSans-Light;
+    src: url(../fonts/IRANSans-Light-web.ttf)
+}
+
+@font-face {
+    font-family: IRANSans-Medium;
+    src: url(../fonts/IRANSans-Medium-web.ttf);
+}
+
+@font-face {
+    font-family: IRANSans-web;
+    src: url(../fonts/IRANSans-web.ttf);
+}
+
+.font {
+    font-family: IRANSans-Light;
+}
+
+.colornav {
+    background-color: #ffd600;
+    font-size: 15px;
+}
+
+.patern {
+    background-image: url(../img/patern.png);
+}
+
+.imgFoter {
+    background-color: #143d59;
+    color: #fcbf49;
+}
+
+.text:hover {
+    color: #3efaea;
+    text-decoration: none;
+}
+
+.gradDwanlod {
+    background-color: #143d59;
+    color: #fcbf49;
+    font-family: IRANSans-web;
+}
+
+.gradDwanlod:hover {
+    background-color: #fcbf49;
+    color: #143d59;
+    font-family: IRANSans-Bold;
+}
+
+.textA {
+    color: #fcbf49;
+    text-decoration: none;
+}
+
+.textA:hover {
+    background-color: #fcbf49;
+    color: #143d59;
+    text-decoration: none;
+}
+
+.de{
+    background-color: black;
+}
+.hader:hover{
+    background-color: beige;
+    color: #fcbf49;
+}

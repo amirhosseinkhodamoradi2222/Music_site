@@ -1,0 +1,25 @@
+<%- include('./header/headeradmin.ejs')  %>  
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div class="row">
+           
+            <h3 class="mt-3 mb-3 ml-1">  ویرایش کردن نام خواننده  </h3>
+            <div class="col-12 col-lg-8">
+                <form action="/admin/edtsinger<%- id %> " method="POST">
+                <div class="mb-3 mt-3">
+                    <label for="exampleFormControlInput1" >  نام خواننده</label>
+                    <input type="text" name="name_singer" value="<%- name %> " class="form-control"  id="name_singer">
+                  </div>
+                <div class="mb-3 mb-8">
+                    <button type="submit" class="btn btn-success w-25">ثبت</button>
+                  <button type="reset" class="btn btn-danger w-25">بازنشانی</button>
+                </div>
+                </form> 
+            </div>
+            <div class="col-12 col-lg-2"></div>
+            <div class="col-12 col-lg-2"></div>
+        </div>
+    </main>
+    
+    
+<%- include('./footer/footeradmin.ejs')  %> 

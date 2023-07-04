@@ -1,0 +1,41 @@
+<%- include('./header/headeradmin.ejs')  %>  
+
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+
+<h3 class="h-3 mt-3 mb-3 ml-1"> کامنت اهنگ ها </h3>
+<div class="table-responsive mt-2">
+    <table class="table table-sm border">
+      <thead>
+        <tr>
+          <th class="text-center">  نام </th>
+          <th class="text-center">ایمیل</th>
+          <th class="text-center">متن کامنت</th>
+          <th class="text-center"> اهنگ </th>
+          <th class="text-center"> وضعیت </th>
+          <th class="text-center">انتشار</th>
+          <th class="text-center">حذف</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if(result){ %> 
+        <% for(let i of result) {%> 
+        <tr>
+          <td class="text-center"><%- i.name %> </td>
+          <td class="text-center"><%- i.email %></td>
+          <td class="text-center"><%- i.text %></td>
+          <td class="text-center"><%- i.title %></td>
+          <td class="text-center">  <%if(i.condition == '1' ){%> <img src="../img/add (2).png" width="30" height="30" alt=""><% }else{%>  <img src="../img/asd.png" width="30" height="30" alt="">  <%}%> </td>
+          <td><a href="/admin/condition<%- i.id  %> "> <button type="button" class="btn btn-info w-100 pt-1 pb-1">انتشار</button></a></td>
+          <td><a href="/admin/deletecoment/<%- i.id%> "> <button type="button" class="btn btn-danger w-100 pt-1 pb-1">حذف</button></a></td>
+        </tr>
+        <% } }%> 
+        <tr>
+      
+      </tbody>
+    </table>
+  </div>
+
+</main>
+    
+    
+<%- include('./footer/footeradmin.ejs')  %> 

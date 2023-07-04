@@ -1,0 +1,22 @@
+<%- include('./header/header.ejs')  %>
+<style>
+    .video-fluid {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+<div>
+    <h2 class="font text-center text-success" style="font-weight: bold;"> <img src="img/ss.png" width="50px" height="50px" /> ویدئو موزیک </h2>
+</div>
+
+<% for( let i of video ) { %>
+<div class="card w-100 border p-4 font" style="width: 18rem;">
+    <h3 class=" ml-3 mb-2" style="text-shadow: 1px 7px 12px #3CB8CE;"> <%- i.title %>  </h3>
+      <video class="video-fluid z-depth-1"  loop controls >
+        <source src="../video/<%- i.src %> " type="video/mp4" />
+      </video>
+      <p  class="h6 m-2 text-center"> <%- i.text %>  </p>
+</div>
+<% } %>
+
+<%- include('./footer/footer.ejs')  %> 

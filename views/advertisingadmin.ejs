@@ -1,0 +1,44 @@
+<%- include('./header/headeradmin.ejs')  %>  
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div class="row mt-3 mb-3">
+   
+            <div class="col-8">
+             <div class="card m-0 border border-success">
+               <div class="card-body">
+                 <h5 class="card-title mb-3">اضافه کردن تبلیغ</h5>
+                <a href="/admin/addadvertising"><button type="button" class="btn btn-success pl-5 pr-5">+ اضافه کردن</button></a> 
+               </div>
+             </div>
+         
+            </div>
+           
+        </div>
+
+              <h3 class="mt-4 mb-3 ml-3">   لیست  تبلیغات  سایت</h3>
+             
+               <div class="table-responsive mt-2">
+                   <div class="row m-0">
+                     <% if(result){ %> 
+                    <% for(let i of result ){ %> 
+                       <div class="col-6 col-md-4 col-lg-3  mt-2 mb-2">
+                          <div class="border border-dark rounded shadow ">
+                           <div class="card border">
+                            <img src="../img/<%- i.src %> "class="card-img-top rounded-top img-fluid hover-shadow" alt="..." height="200px" width="200px" />
+                           </div>
+                            <div>
+                              <h6 class="mt-1 mb-1 text-center"><%- i.link %> </h6>
+                              <a href="/admin/deleteadvertising<%- i.id %>/<%- i.src %> "> <button type="button" class="rounded-0 btn btn-danger w-100 pt-1 pb-1">حذف</button></a>
+                            </div>
+                          </div>
+                        </div>  
+                        <% } %>  
+                        <% } %>  
+                    </div>
+                </div>
+           
+            
+    </main>
+    
+    
+<%- include('./footer/footeradmin.ejs')  %> 

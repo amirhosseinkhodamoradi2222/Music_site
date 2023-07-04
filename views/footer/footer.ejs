@@ -1,0 +1,104 @@
+
+ </div>
+<div class="col-12 col-lg-3 col-md-3 m-0 ">
+    <div class="card mt-3 border">
+        <div class="card" style="background-color: #143d59;">
+            <h4 class="h4 font  text-center  pl-3 pt-2" style="font-weight: bold; color: #fcbf49;"> دسته بندی</h4>
+        </div>
+        <div class="card">
+            <div class="list-group">
+                <% for(let i of cotgory) {%> 
+                <a href='/catgory<%- i.id %>'  class=" font text-justify list-group-item-action text-dark" style="font-weight: bold; font-size: 16px; "><img src="svg/ssss.svg" class="pr-1 pl-2" width="30px" height="30px" /><%- i.name %></a>
+                <% } %> 
+            </div>
+        </div>
+    </div>
+    <div class="card mt-3 borde">
+        <div class="card" style="background-color: #143d59;">
+            <h4 class="h4 font  text-center  pl-3 pt-2" style="font-weight: bold; color: #fcbf49;"> دمو</h4>
+        </div>
+        <div class="card">
+            <% for( let i of dmo ){ %> 
+            <div class="list-group">
+                <a href="/<%- i.id %>" class=" font text-justify list-group-item-action text-dark" style="font-weight: bold; font-size: 16px; "><img src="svg/ssss.svg" class="pr-1 pl-2" width="30px" height="30px" /><%- i.title %></a>
+            </div>
+            <% } %> 
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row w-100 mt-1 m-0 imgFoter font">
+<div class="col">
+<h5 class="h5 font text-justify " style="font-weight: bold;"><img src="img/svg-music.png" class="m-2" style="background-color: #ffff;" width="30px" height="30px" />هنرمندان</h5>
+<p class="pl-3">
+<% for( let i of singer ){ %> 
+        <a href="/singer<%- i.id  %> " class="textA  pr-1 pl-1"> <b> <%- i.name  %>    </b></a> <b>|</b>
+<% } %> 
+    </p>
+</div>
+</div>
+<footer class="imgFoter text-center text-lg-start">
+<div class="container p-4 mb-0">
+<div class="row">
+    <div class="col-lg-3 col-md-12 mb-4 mb-md-0">
+        <h5 class=" font text-justify"> <img src="img/cr.png" alt="" srcset="" width="25px" height="25px"> ویژگی های سایت </h5>
+        <p class="font text-justify">
+            در این سایت اهنگ ها با کیفیت 320 و 128 پخش می شود در ضمن شما میتوانید در قسمت ارسال اهنگ میتوانید اهنگ های محلی خود را برای ما ارسال کنید
+        </p>
+    </div>
+    <div class="col-lg-3 col-md-6 mb-4 mb-md-0 font">
+        <h5 class=" text-justify"> <img src="img/cr.png" alt="" srcset="" width="25px" height="25px"> دسترسی های سایت</h5>
+
+        <ul class="list-unstyled mb-0 text-justify">
+            <li>
+                <a href="/vido" class="imgFoter text" style="text-decoration: none;"> <img src="img/video.png" alt="" srcset="" width="20px" height="20px"> ویدئو موزیک </a>
+            </li>
+            <li>
+                <a href="/" class="imgFoter text" style="text-decoration: none;"> <img src="img/new.png" alt="" srcset="" width="20px" height="20px"> جدید ترین</a>
+            </li>
+            <li>
+                <a href="/consert" class="imgFoter text" style="text-decoration: none;"><img src="img/consert.png" alt="" srcset="" width="20px" height="20px"> کنسرت ها</a>
+            </li>
+            <li>
+                <a href="/send" class="imgFoter text" style="text-decoration: none;"> <img src="img/send.png" alt="" srcset="" width="20px" height="20px"> ارسال اهنگ</a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-lg-3 col-md-12 mb-4 mb-md-0">
+        <h5 class="text-uppercase font text-justify"> <img src="img/cr.png" alt="" srcset="" width="25px" height="25px"> درباره ما</h5>
+
+        <p class="font text-justify">
+            این سایت دارای مجوز ارشاد است و تابع قانون جمهوری اسلامی ایران است ما در این سایت قصد داریم بهترین و با کیفیت ترین اهنگ ها را تقدیم شما عزیزان کنیم
+        </p>
+    </div>
+    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-center pb-2 font mb-3"> <img src="img/cr.png" alt="" srcset="" width="25px" height="25px"> با ما همراه باشید...</h5>
+        <div class="row">
+            <div class="col">
+                <a href="https://telegram.org/" target="_blank"><img src="img/telgram.png" alt="" height="45px" width="45px"></a>
+                <a href="https://www.instagram.com/" target="_blank"><img src="img/instagram.png" alt="" height="45px" width="45px"></a>
+                <a href="https://www.aparat.com/" target="_blank"><img src="img/aparat.png" alt="" height="50px" width="50px"></a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="text-center imgFoter m-1">
+<p class="text-success  p-2 font">تمامی حقوق برای سایت موزیک محفوظ می باشد</p>
+</div>
+
+</footer>
+
+
+</body>
+<script src="https://www.google.com/recaptcha/api.js?hl=fa" async defer></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.rtlcss.com/bootstrap/v4.5.3/js/bootstrap.bundle.min.js" integrity="sha384-40ix5a3dj6/qaC7tfz0Yr+p9fqWLzzAXiwxVLt9dw7UjQzGYw6rWRhFAnRapuQyK" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+<script src="js/costom.js "></script>
+
+</html>

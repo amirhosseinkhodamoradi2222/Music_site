@@ -1,0 +1,45 @@
+<%- include('./header/headeradmin.ejs')  %>  
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div class="row">
+               
+            <h3 class="mt-3 mb-3 ml-1">  ویرایش ویدئو موزیک  </h3>
+            <div class="col-12 col-lg-8">
+                <form action="/admin/edtvido<%- id %>" method="POST" enctype="multipart/form-data">
+                    <div class="mb-3 mt-3">
+                        <label for="exampleFormControlInput1" class=""> عنوان</label>
+                        <input type="text" value="<%-title %>" name="title" class="form-control" id="exampleFormControlInput1">
+                      </div>
+                    <div class="mb-3">
+                        <label for="formFileMultiple" class="">ویدئو موزیک</label>
+                        <input class="form-control" value="<%- src %> " type="file" name="vido" id="formFileMultiple" multiple>
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="">متن برای ویدئو موزیک</label>
+                        <textarea class="form-control"  name="text" id="exampleFormControlTextarea1" rows="5"><%-text%> </textarea>
+                    </div>
+                      <div class="mb-3  w-50">
+                        <label for="exampleFormControlTextarea1" class="">وضعیت نمایش</label>
+                        <select class="form-select" name="condition" aria-label="Default select example">
+                          <% if(condition == 1 ){%>
+                            <option value="1" selected>بله</option>
+                            <option value="0">خیر</option>
+                            <% } else {%>
+                              <option value="0" selected>خیر</option>
+                              <option value="1" >بله</option>
+                              <% } %> 
+                          </select>
+                      </div>
+                <div class="mb-3 mb-8">
+                    <button type="submit" class="btn btn-success w-25">ثبت</button>
+                  <button type="reset" class="btn btn-danger w-25">بازنشانی</button>
+                </div>
+                </form> 
+            </div>
+            <div class="col-12 col-lg-2"></div>
+            <div class="col-12 col-lg-2"></div>
+        </div>
+    </main>
+    
+    
+<%- include('./footer/footeradmin.ejs')  %> 

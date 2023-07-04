@@ -1,0 +1,17 @@
+<%- include('./header/header.ejs') %> 
+<div>
+    <h2 class="font text-center text-success" style="font-weight: bold;"> <img src="img/ss.png" width="50px" height="50px" /> اخبار موزیک و هنرمندان </h2>
+</div>
+<% for( let i of news ){ %>
+<div class="card font shadow border mb-2 mt-3">
+    <div class="card-body">
+        <h5 class="card-title text-dark pb-2"><%- i.title %> </h5>
+        <img src="../img/<%- i.img %> " class="card-img-top " alt="تصویر موجود نیست"/>
+        <p class="card-text pt-2 text-justify text-dark"> <%- i.text %>  </p>
+    </div>
+    <div class="card-footer pt-2">
+        <p> <b class="text-dark" >  تاریخ خبر : </b> <b class="text-info"><%- i.date %> </b> </p>
+    </div>
+</div>
+<% } %> 
+<%- include ('./footer/footer.ejs') %> 

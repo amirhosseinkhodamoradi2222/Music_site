@@ -1,0 +1,18 @@
+
+<div>
+    <h2 class="font text-center" style="font-weight: bold;"> <img src="img/ss.png" width="50px" height="50px" /> ارسال اهنگ </h2>
+</div>
+<div class="card w-100 border p-4" style="width: 18rem;">
+    <div class="form font"> 
+        <form action="/add/add" method="post" enctype="multipart/form-data">
+            <label class="form-label text-dark pt-2 pl-2" for="form3Example1"> نام  :</label>
+            <input type="text" name="name" for="name" id="form3Example1" class="form-control" required />
+
+
+            <label class="form-label pt-2 pl-2 text-dark" for="form3Example1">فایل اهنگ </label>
+            <input type="file" class="form-control" id="customFile" name="mmm" required />
+
+            <button type="submit" class="btn btn-primary mt-2">ارسال پیام</button>
+       </form>
+      </div>
+</div>

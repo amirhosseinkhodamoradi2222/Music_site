@@ -1,0 +1,48 @@
+<%- include('./header/header.ejs') %> 
+<div>
+    <h2 class="font text-center text-success" style="font-weight: bold;"> <img src="img/ss.png" width="50px" height="50px" /> ارسال اهنگ </h2>
+</div>
+<div class="card w-100 border p-4" style="width: 18rem;">
+    <div class="form font">
+          <% if(mass == "لطفا اطلاعات را کامل پر کنید"){ %> 
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+               <%- mass %> 
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div> 
+         <% } else if(mass == "پیام با موفقیت ارسال شد") { %>
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <%- mass %> 
+             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+             </button>
+           </div> 
+           <% } else if(mass == "فقط فایل هایی با پسوند MP3 ارسال شود") { %> 
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <%- mass %> 
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div> 
+            <% } %> 
+        <form action="/send" method="post" enctype="multipart/form-data">
+            <label class="form-label text-dark pt-2 pl-2" for="form3Example1"> نام  :</label>
+            <input type="text" name="name" for="name" id="form3Example1" class="form-control" required />
+
+            <label class="form-label text-dark pt-2 pl-2" for="form3Example1"> نام خانوادگی :</label>
+            <input type="text" name="family" for="family" id="form3Example1" class="form-control" required />
+
+            <label class="form-label pt-2 pl-2 text-dark" for="form3Example1">ایمیل :</label>
+            <input type="text" id="form3Example1" name="email" for="email" class="form-control" required  autocomplete=""/>
+
+
+            <label class="form-label pt-2 pl-2 text-dark" for="form3Example1">فایل اهنگ </label>
+            <input type="file" class="form-control" id="customFile" name="music" required />
+<br>
+            <button type="submit" class="btn btn-primary mt-2 w-100">ارسال اهنگ</button>
+       </form>
+      </div>
+</div>
+  
+<%- include ('./footer/footer.ejs') %> 

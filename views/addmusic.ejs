@@ -1,0 +1,83 @@
+<%- include('./header/headeradmin.ejs')  %>  
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div class="row">
+           
+            <h3 class="mt-3 mb-3 ml-1">  اضافه کردن اهنگ جدید </h3>
+            <div class="col-12 col-lg-8">
+                <form action="/admin/addmusic" method="POST" enctype="multipart/form-data">
+                <div class="mb-3 mt-3">
+                    <label for="exampleFormControlInput1" class="">نام اهنگ</label>
+                    <input type="text" class="form-control" name="name" id="exampleFormControlInput1">
+                  </div>
+                  <div class="mb-3 w-50">
+                    <label for="exampleFormControlTextarea1" class="">نام خواننده</label>
+                    <select class="form-select" name="singer" aria-label="Default select example">
+                      <% for(let i of singer) {%> 
+                        <option value=<%= i.id %> ><%= i.name %></option>
+                        <% } %> 
+                      </select>
+                  </div>
+                  <div class="mb-3 mt-3">
+                    <label for="exampleFormControlInput1" class="">تاریخ انتشار اهنگ</label>
+                    <input type="text" class="form-control" name="date" id="exampleFormControlInput1">
+                  </div>
+                  <div class="mb-3 mt-3">
+                    <label for="exampleFormControlInput1" class="">عنوان اهنگ</label>
+                    <input type="text" class="form-control" name="title" id="exampleFormControlInput1">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="">متن اهنگ</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" name="text" rows="5"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="formFileMultiple" class="">عکس برای اهنگ</label>
+                    <input class="form-control" type="file" id="formFileMultiple" name="imge">
+                  </div>
+                  <div class="mb-3">
+                    <label for="formFileMultiple" class=""> فایل اهنگ</label>
+                    <input class="form-control" type="file" id="formFileMultiple" name="music">
+                  </div>
+                  <div class="mb-3 w-50">
+                    <label for="exampleFormControlTextarea1" class="">دسته بندی اهنگ</label>
+                    <select class="form-select" aria-label="Default select example" name="catgory">
+                      <% for(let i of catgory) {%> 
+                      <option value=<%= i.id %> ><%= i.name %></option>
+                      <% } %> 
+                      </select>
+                  </div>
+                  <div class="mb-3 w-50">
+                    <label for="exampleFormControlTextarea1" class="" >اهنگ جدید</label>
+                    <select class="form-select" name="new" aria-label="Default select example">
+                      <option value="0"> قدیمی </option>
+                      <option value="1">جدید</option>
+                      </select>
+                  </div>
+                  <div class="mb-3 w-50">
+                    <label for="exampleFormControlTextarea1" class="">اهنگ محبوب</label>
+                    <select class="form-select" name="popular" aria-label="Default select example">
+                        <option value="0">خیر </option>
+                        <option value="1">بله</option>
+                      </select>
+                  </div>
+                  <div class="mb-3  w-50">
+                    <label for="exampleFormControlTextarea1" class="">وضعیت نمایش</label>
+                    <select class="form-select" aria-label="Default select example" name="condition">
+                      <option value="1">بله</option>
+                        <option value="0">خیر</option>
+                      </select>
+                  </div>
+                  <div class="mb-3 mb-8">
+                    <button type="submit" class="btn btn-success w-25">ثبت</button>
+                  <button type="reset" class="btn btn-danger w-25">بازنشانی</button>
+                </div>
+                </form> 
+            </div>
+            <div class="col-12 col-lg-2"></div>
+            <div class="col-12 col-lg-2"></div>
+        </div>
+     
+    </main>
+    
+    
+<%- include('./footer/footeradmin.ejs')  %> 

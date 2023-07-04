@@ -1,0 +1,26 @@
+<%- include('./header/header.ejs')  %>
+
+
+<div>
+    
+    <h2 class="font text-center" style="font-weight: bold;"> <img src="img/ss.png" width="50px" height="50px" />  از اهنگ ها لذت ببرید </h2>
+
+</div>
+  <% for(let i of sin) { %> 
+                <div class="card border borde shadow mb-1  ">
+                    <div class="card-body">
+                        <h5 class="card-title font" style="font-weight: bold;"><img src="img/svg-music.png" style="width: 25px; height: 25px;" /> آهنگ های <%- i.name %>  </h5>
+                        <p class="card-text text-justify font">  <%- i.title %> </p>
+                        <img src="/img/<%- i.img %>" class="card-img-top font" alt="این عکس موجود نمی باشد..." />
+                        <a href='/<%- i.id %> '  class="btn gradDwanlod  w-100 mt-1"> <%- i.name %> </a>
+                    </div>
+                    <div class="card-footer">
+                        <b class="font text-primary" style="font-size: 10px;">تاریخ انتشار:</b>
+                        <b class="font text-danger" style="font-size: 10px;"> <%- i.history %>  </b>
+                    </div>
+                </div>
+<% } %> 
+
+
+
+<%- include('./footer/footer.ejs')  %> 
